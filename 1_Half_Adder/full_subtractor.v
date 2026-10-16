@@ -1,0 +1,12 @@
+
+module full_Subtractor(
+    input A,
+    input B,
+    input Bin,
+    output D,
+    output Bout
+);
+ assign D = A ^ B ^ Bin;
+ assign Bout = (~A & B) | (~A & Bin) | (B & Bin);
+ 
+  endmodule
