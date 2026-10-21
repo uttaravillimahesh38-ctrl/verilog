@@ -1,3 +1,0 @@
-module mux_2_1();
-
-endmodule
