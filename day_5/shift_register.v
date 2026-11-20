@@ -1,0 +1,24 @@
+module shift_register(
+    input clk,
+    input reset,
+    input serial_in,
+    output reg serial_out
+);
+
+reg [3:0] temp;
+
+always @(posedge clk or posedge reset)
+begin
+    if(reset)
+        temp <= 4'b0000;
+
+    else
+        temp <= {temp[2:0], serial_in};
+end
+
+always @(*)
+begin
+    serial_out = temp[3];
+end
+
+endmodule
